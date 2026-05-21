@@ -135,19 +135,37 @@ export default function PreviewProposta() {
               "
             />
 
-            <div className="grid grid-cols-2 gap-8 p-10 h-full">
+            <div
+              className="
+                grid
+                grid-cols-2
+                gap-8
+                px-10
+                pt-4
+                pb-8
+                h-full
+              "
+            >
 
               {/* ESQUERDA */}
 
-              <div className="flex flex-col justify-start pt-4">
+              <div className="flex flex-col justify-start pt-0">
 
                 <div>
 
-                  <img
-                    src={logo}
-                    alt="Órigo Energia"
-                    className="w-40 mb-5"
-                  />
+                  <div className="flex flex-col items-start mb-3">
+
+                    <img
+                      src={logo}
+                      alt="Órigo Energia"
+                      className="
+                        w-36
+                        object-contain
+                        opacity-95
+                      "
+                    />
+
+                  </div>
 
                   <div
                     className="
@@ -171,7 +189,7 @@ export default function PreviewProposta() {
                   </div>
 
                   <p className="text-xs tracking-[3px] uppercase text-gray-400 mb-3">
-                    Solução homologada ANEEL • Energia limpa por assinatura
+                    SOLUÇÃO HOMOLOGADA ANEEL • ENERGIA LIMPA POR ASSINATURA
                   </p>
 
                   <h1
@@ -414,8 +432,6 @@ export default function PreviewProposta() {
             "
           >
 
-            {/* HEADER */}
-
             <div className="bg-gradient-to-r from-[#832472] to-[#5A189A] p-7 text-white">
 
               <p className="uppercase tracking-[5px] text-xs text-purple-200">
@@ -435,8 +451,6 @@ export default function PreviewProposta() {
             </div>
 
             <div className="p-5">
-
-              {/* MÉTRICAS */}
 
               <div className="grid grid-cols-4 gap-4">
 
@@ -543,8 +557,6 @@ export default function PreviewProposta() {
                 </div>
 
               </div>
-
-              {/* CONTEÚDO */}
 
               <div className="grid grid-cols-2 gap-4 mt-4">
 
@@ -723,8 +735,6 @@ export default function PreviewProposta() {
                     </h3>
 
                   </div>
-
-                  {/* SELOS */}
 
                   <div className="mt-4 flex flex-wrap gap-2">
 
