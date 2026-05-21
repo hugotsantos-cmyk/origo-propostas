@@ -153,13 +153,13 @@ export default function PreviewProposta() {
 
                 <div>
 
-                  <div className="flex flex-col items-start mb-3">
+                  <div className="flex flex-col items-start mb-1">
 
                     <img
                       src={logo}
                       alt="Órigo Energia"
                       className="
-                        w-36
+                        w-24
                         object-contain
                         opacity-95
                       "
@@ -560,8 +560,6 @@ export default function PreviewProposta() {
 
               <div className="grid grid-cols-2 gap-4 mt-4">
 
-                {/* COMPARATIVO */}
-
                 <div
                   className="
                     bg-white
@@ -637,8 +635,6 @@ export default function PreviewProposta() {
                   </div>
 
                 </div>
-
-                {/* COMO FUNCIONA */}
 
                 <div
                   className="
