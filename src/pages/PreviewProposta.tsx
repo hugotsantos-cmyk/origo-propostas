@@ -93,7 +93,7 @@ export default function PreviewProposta() {
               py-4
               rounded-[20px]
               font-bold
-              shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+              shadow-[0_10px_35px_rgba(131,36,114,0.10)]
               text-lg
             "
           >
@@ -104,15 +104,15 @@ export default function PreviewProposta() {
 
         <div id="proposta" className="bg-[#ECECEC]">
 
-          {/* ========================= */}
+          {/* ======================= */}
           {/* PÁGINA 1 */}
-          {/* ========================= */}
+          {/* ======================= */}
 
           <section
             className="
               w-[297mm]
               h-[210mm]
-              bg-[#F9F9F9]
+              bg-[#F8F8F8]
               overflow-hidden
               relative
               mx-auto
@@ -136,7 +136,7 @@ export default function PreviewProposta() {
 
               {/* ESQUERDA */}
 
-              <div className="flex flex-col justify-start pt-10">
+              <div className="flex flex-col justify-start pt-4">
 
                 <div>
 
@@ -155,16 +155,21 @@ export default function PreviewProposta() {
                       py-2
                       rounded-full
                       border
-                      border-[#832472]/20
+                      border-[#832472]/10
                       text-[#832472]
                       text-sm
                       font-semibold
                       mb-5
                       bg-white
+                      shadow-[0_4px_18px_rgba(15,23,42,0.04)]
                     "
                   >
                     Economia • Sustentabilidade • Simplicidade
                   </div>
+
+                  <p className="text-xs tracking-[3px] uppercase text-gray-400 mb-3">
+                    Solução homologada ANEEL • Energia limpa por assinatura
+                  </p>
 
                   <h1
                     className="
@@ -206,7 +211,18 @@ export default function PreviewProposta() {
 
                 <div className="flex gap-4 mt-6">
 
-                  <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 py-3 w-36">
+                  <div
+                    className="
+                      bg-white
+                      border border-white/40
+                      backdrop-blur-sm
+                      rounded-[22px]
+                      shadow-[0_4px_18px_rgba(15,23,42,0.05)]
+                      px-4
+                      py-3
+                      w-36
+                    "
+                  >
 
                     <p className="text-gray-500 text-xs">
                       Consumo Médio
@@ -222,7 +238,18 @@ export default function PreviewProposta() {
 
                   </div>
 
-                  <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 py-3 w-36">
+                  <div
+                    className="
+                      bg-white
+                      border border-white/40
+                      backdrop-blur-sm
+                      rounded-[22px]
+                      shadow-[0_4px_18px_rgba(15,23,42,0.05)]
+                      px-4
+                      py-3
+                      w-36
+                    "
+                  >
 
                     <p className="text-gray-500 text-xs">
                       Desconto
@@ -238,7 +265,18 @@ export default function PreviewProposta() {
 
                   </div>
 
-                  <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 py-3 w-36">
+                  <div
+                    className="
+                      bg-white
+                      border border-white/40
+                      backdrop-blur-sm
+                      rounded-[22px]
+                      shadow-[0_4px_18px_rgba(15,23,42,0.05)]
+                      px-4
+                      py-3
+                      w-36
+                    "
+                  >
 
                     <p className="text-gray-500 text-xs">
                       Modelo
@@ -272,7 +310,7 @@ export default function PreviewProposta() {
                     max-w-[420px]
                     relative
                     overflow-hidden
-                    shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+                    shadow-[0_10px_35px_rgba(131,36,114,0.10)]
                   "
                 >
 
@@ -342,8 +380,8 @@ export default function PreviewProposta() {
                       px-5
                       py-4
                       rounded-[18px]
-                      text-lg
-                      shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+                      text-base
+                      shadow-[0_10px_35px_rgba(131,36,114,0.10)]
                       text-center
                     "
                   >
@@ -358,15 +396,15 @@ export default function PreviewProposta() {
 
           </section>
 
-          {/* ========================= */}
+          {/* ======================= */}
           {/* PÁGINA 2 */}
-          {/* ========================= */}
+          {/* ======================= */}
 
           <section
             className="
               w-[297mm]
               h-[210mm]
-              bg-[#F9F9F9]
+              bg-[#F8F8F8]
               overflow-hidden
               relative
               mx-auto
@@ -399,7 +437,17 @@ export default function PreviewProposta() {
 
               <div className="grid grid-cols-4 gap-4">
 
-                <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 py-3">
+                <div
+                  className="
+                    bg-white
+                    border border-white/40
+                    backdrop-blur-sm
+                    rounded-[22px]
+                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
+                    px-4
+                    py-3
+                  "
+                >
 
                   <p className="text-gray-500 text-xs">
                     Consumo Médio
@@ -415,7 +463,17 @@ export default function PreviewProposta() {
 
                 </div>
 
-                <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 py-3">
+                <div
+                  className="
+                    bg-white
+                    border border-white/40
+                    backdrop-blur-sm
+                    rounded-[22px]
+                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
+                    px-4
+                    py-3
+                  "
+                >
 
                   <p className="text-gray-500 text-xs">
                     Desconto
@@ -431,7 +489,17 @@ export default function PreviewProposta() {
 
                 </div>
 
-                <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 py-3">
+                <div
+                  className="
+                    bg-white
+                    border border-white/40
+                    backdrop-blur-sm
+                    rounded-[22px]
+                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
+                    px-4
+                    py-3
+                  "
+                >
 
                   <p className="text-gray-500 text-xs">
                     Economia Mensal
@@ -447,7 +515,15 @@ export default function PreviewProposta() {
 
                 </div>
 
-                <div className="bg-[#FFC837] rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 py-3">
+                <div
+                  className="
+                    bg-[#FFC837]
+                    rounded-[22px]
+                    shadow-[0_10px_35px_rgba(131,36,114,0.10)]
+                    px-4
+                    py-3
+                  "
+                >
 
                   <p className="text-[#832472] font-bold text-xs">
                     Economia Anual
@@ -471,7 +547,16 @@ export default function PreviewProposta() {
 
                 {/* COMPARATIVO */}
 
-                <div className="bg-white rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-5">
+                <div
+                  className="
+                    bg-white
+                    border border-white/40
+                    backdrop-blur-sm
+                    rounded-[24px]
+                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
+                    p-5
+                  "
+                >
 
                   <h3 className="text-2xl font-extrabold text-[#282828]">
                     Comparativo Financeiro
@@ -479,7 +564,7 @@ export default function PreviewProposta() {
 
                   <div className="mt-5 space-y-4 text-base">
 
-                    <div className="flex justify-between">
+                    <div className="flex justify-between border-b border-gray-100 pb-3">
 
                       <span className="text-gray-600">
                         Conta com desconto Órigo
@@ -491,7 +576,7 @@ export default function PreviewProposta() {
 
                     </div>
 
-                    <div className="flex justify-between">
+                    <div className="flex justify-between border-b border-gray-100 pb-3">
 
                       <span className="text-gray-600">
                         Economia mensal
@@ -503,7 +588,7 @@ export default function PreviewProposta() {
 
                     </div>
 
-                    <div className="flex justify-between">
+                    <div className="flex justify-between pb-1">
 
                       <span className="text-gray-600">
                         Economia anual
@@ -517,9 +602,19 @@ export default function PreviewProposta() {
 
                   </div>
 
-                  <div className="mt-5 bg-[#F7F7F7] rounded-[20px] p-4 border border-gray-100">
+                  <div
+                    className="
+                      mt-5
+                      bg-[#FAF2FA]
+                      rounded-[16px]
+                      px-5
+                      py-3
+                      border
+                      border-[#832472]/10
+                    "
+                  >
 
-                    <h3 className="text-lg font-extrabold text-[#832472] leading-relaxed">
+                    <h3 className="text-base font-extrabold text-[#832472] leading-relaxed">
                       Em 3 anos, sua economia poderá ultrapassar
                       R$ {(dados.economiaAnual * 3)?.toFixed(0)}.
                     </h3>
@@ -530,7 +625,16 @@ export default function PreviewProposta() {
 
                 {/* COMO FUNCIONA */}
 
-                <div className="bg-white rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-5">
+                <div
+                  className="
+                    bg-white
+                    border border-white/40
+                    backdrop-blur-sm
+                    rounded-[24px]
+                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
+                    p-5
+                  "
+                >
 
                   <h3 className="text-2xl font-extrabold text-[#282828]">
                     Como funciona?
@@ -600,7 +704,16 @@ export default function PreviewProposta() {
 
                   </div>
 
-                  <div className="mt-4 bg-[#FAF2FA] border border-[#832472]/10 rounded-[18px] p-4">
+                  <div
+                    className="
+                      mt-4
+                      bg-[#FAF2FA]
+                      border
+                      border-[#832472]/10
+                      rounded-[18px]
+                      p-4
+                    "
+                  >
 
                     <h3 className="text-base font-extrabold text-[#832472] leading-relaxed">
                       Sem obras. Sem equipamentos. Sem interrupções.
