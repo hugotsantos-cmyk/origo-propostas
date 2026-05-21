@@ -21,14 +21,17 @@ export default function PreviewProposta() {
       },
 
       html2canvas: {
-        scale: 1,
-        useCORS: true
+        scale: 3,
+        useCORS: true,
+        letterRendering: true,
+        allowTaint: true
       },
 
       jsPDF: {
         unit: 'mm',
         format: 'a4',
-        orientation: 'landscape'
+        orientation: 'landscape',
+        compress: false
       },
 
       pagebreak: {
@@ -112,7 +115,7 @@ export default function PreviewProposta() {
             className="
               w-[297mm]
               h-[210mm]
-              bg-[#F8F8F8]
+              bg-white
               overflow-hidden
               relative
               mx-auto
@@ -404,7 +407,7 @@ export default function PreviewProposta() {
             className="
               w-[297mm]
               h-[210mm]
-              bg-[#F8F8F8]
+              bg-white
               overflow-hidden
               relative
               mx-auto
