@@ -21,7 +21,7 @@ export default function PreviewProposta() {
       },
 
       html2canvas: {
-        scale: 1.2,
+        scale: 1,
         useCORS: true
       },
 
@@ -93,7 +93,7 @@ export default function PreviewProposta() {
               py-4
               rounded-[20px]
               font-bold
-              shadow-xl
+              shadow-[0_8px_30px_rgba(0,0,0,0.08)]
               text-lg
             "
           >
@@ -104,12 +104,14 @@ export default function PreviewProposta() {
 
         <div id="proposta" className="bg-[#ECECEC]">
 
+          {/* ========================= */}
           {/* PÁGINA 1 */}
+          {/* ========================= */}
 
           <section
             className="
               w-[297mm]
-              min-h-[210mm]
+              h-[210mm]
               bg-[#F9F9F9]
               overflow-hidden
               relative
@@ -130,16 +132,18 @@ export default function PreviewProposta() {
               "
             />
 
-            <div className="grid grid-cols-2 gap-8 p-12 h-full">
+            <div className="grid grid-cols-2 gap-8 p-10 h-full">
 
-              <div className="flex flex-col justify-between">
+              {/* COLUNA ESQUERDA */}
+
+              <div className="flex flex-col justify-center">
 
                 <div>
 
                   <img
                     src={logo}
                     alt="Órigo Energia"
-                    className="w-44 mb-6"
+                    className="w-40 mb-5"
                   />
 
                   <div
@@ -155,7 +159,7 @@ export default function PreviewProposta() {
                       text-[#832472]
                       text-sm
                       font-semibold
-                      mb-6
+                      mb-5
                       bg-white
                     "
                   >
@@ -164,15 +168,14 @@ export default function PreviewProposta() {
 
                   <h1
                     className="
-                      text-5xl
-                      font-black
+                      text-4xl
+                      font-extrabold
                       leading-tight
                       text-[#282828]
                     "
                   >
                     {tituloPrincipal}
-                    <br />
-                    para
+
                     <br />
 
                     <span className="text-[#832472]">
@@ -182,8 +185,8 @@ export default function PreviewProposta() {
 
                   <p
                     className="
-                      mt-6
-                      text-lg
+                      mt-5
+                      text-base
                       text-gray-600
                       leading-relaxed
                       max-w-2xl
@@ -194,51 +197,75 @@ export default function PreviewProposta() {
 
                 </div>
 
-                <div className="flex gap-4 mt-8">
+                <div className="flex gap-4 mt-5">
 
-                  <div className="bg-white rounded-[24px] shadow-lg p-5 w-40">
-                    <p className="text-gray-500 text-sm">Consumo Médio</p>
-                    <h3 className="text-4xl font-black text-[#832472] mt-3">
+                  <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-4 w-36">
+
+                    <p className="text-gray-500 text-xs">
+                      Consumo Médio
+                    </p>
+
+                    <h3 className="text-3xl font-extrabold text-[#832472] mt-2">
                       {dados.mediaKwh}
                     </h3>
-                    <p className="text-gray-500 mt-1 text-sm">kWh/mês</p>
+
+                    <p className="text-gray-500 mt-1 text-xs">
+                      kWh/mês
+                    </p>
+
                   </div>
 
-                  <div className="bg-white rounded-[24px] shadow-lg p-5 w-40">
-                    <p className="text-gray-500 text-sm">Desconto</p>
-                    <h3 className="text-4xl font-black text-[#16968D] mt-3">
+                  <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-4 w-36">
+
+                    <p className="text-gray-500 text-xs">
+                      Desconto
+                    </p>
+
+                    <h3 className="text-3xl font-extrabold text-[#16968D] mt-2">
                       {dados.desconto}%
                     </h3>
-                    <p className="text-gray-500 mt-1 text-sm">estimado</p>
+
+                    <p className="text-gray-500 mt-1 text-xs">
+                      estimado
+                    </p>
+
                   </div>
 
-                  <div className="bg-white rounded-[24px] shadow-lg p-5 w-40">
-                    <p className="text-gray-500 text-sm">Modelo</p>
-                    <h3 className="text-xl font-black text-[#282828] mt-3">
+                  <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-4 w-36">
+
+                    <p className="text-gray-500 text-xs">
+                      Modelo
+                    </p>
+
+                    <h3 className="text-lg font-extrabold text-[#282828] mt-2">
                       Sem instalação
                     </h3>
+
                   </div>
 
                 </div>
 
-                <p className="mt-8 text-gray-500 text-sm">
+                <p className="mt-4 text-gray-500 text-xs">
                   Proposta personalizada • {dataAtual}
                 </p>
 
               </div>
 
+              {/* COLUNA DIREITA */}
+
               <div className="flex items-center justify-center">
 
                 <div
                   className="
-                    bg-[#832472]
+                    bg-[#8E2A7B]
                     text-white
-                    rounded-[36px]
-                    p-10
+                    rounded-[34px]
+                    p-8
                     w-full
-                    max-w-[470px]
+                    max-w-[440px]
                     relative
                     overflow-hidden
+                    shadow-[0_8px_30px_rgba(0,0,0,0.08)]
                   "
                 >
 
@@ -251,7 +278,7 @@ export default function PreviewProposta() {
                       h-[220px]
                       bg-[#A4328C]
                       rounded-full
-                      opacity-40
+                      opacity-30
                     "
                   />
 
@@ -262,16 +289,16 @@ export default function PreviewProposta() {
                       text-[#832472]
                       font-black
                       rounded-full
-                      px-6
-                      py-3
-                      text-base
-                      mb-8
+                      px-5
+                      py-2
+                      text-sm
+                      mb-6
                     "
                   >
                     Energia por Assinatura
                   </div>
 
-                  <h2 className="text-4xl font-black leading-tight">
+                  <h2 className="text-3xl font-extrabold leading-tight">
                     O jeito de
                     <br />
                     consumir energia
@@ -279,11 +306,11 @@ export default function PreviewProposta() {
                     mudou.
                   </h2>
 
-                  <p className="mt-6 text-lg leading-relaxed text-purple-100">
+                  <p className="mt-5 text-base leading-relaxed text-purple-100">
                     {textoLateral}
                   </p>
 
-                  <div className="mt-8 space-y-4 text-lg">
+                  <div className="mt-6 space-y-3 text-base">
 
                     {bullets.map((item) => (
 
@@ -301,15 +328,15 @@ export default function PreviewProposta() {
 
                   <div
                     className="
-                      mt-10
+                      mt-8
                       bg-[#FFC837]
                       text-[#832472]
                       font-black
-                      px-6
+                      px-5
                       py-4
-                      rounded-[20px]
+                      rounded-[18px]
                       text-lg
-                      shadow-xl
+                      shadow-[0_8px_30px_rgba(0,0,0,0.08)]
                       text-center
                     "
                   >
@@ -324,12 +351,14 @@ export default function PreviewProposta() {
 
           </section>
 
+          {/* ========================= */}
           {/* PÁGINA 2 */}
+          {/* ========================= */}
 
           <section
             className="
               w-[297mm]
-              min-h-[210mm]
+              h-[210mm]
               bg-[#F9F9F9]
               overflow-hidden
               relative
@@ -337,104 +366,154 @@ export default function PreviewProposta() {
             "
           >
 
-            <div className="bg-gradient-to-r from-[#832472] to-[#5A189A] p-10 text-white">
+            {/* HEADER */}
+
+            <div className="bg-gradient-to-r from-[#832472] to-[#5A189A] p-7 text-white">
 
               <p className="uppercase tracking-[5px] text-xs text-purple-200">
                 Simulação Financeira
               </p>
 
-              <h2 className="text-4xl font-black leading-tight mt-4">
+              <h2 className="text-3xl font-extrabold leading-tight mt-3">
                 Economia projetada para
                 <br />
                 {dados.nomeCliente}
               </h2>
 
-              <p className="mt-4 text-lg text-purple-100 max-w-4xl leading-relaxed">
-                Simulação personalizada baseada no perfil médio de consumo informado.
+              <p className="mt-2 text-sm text-purple-100 max-w-4xl leading-relaxed">
+                Simulação baseada no perfil médio de consumo informado.
               </p>
 
             </div>
 
-            <div className="p-8">
+            <div className="p-5">
+
+              {/* MÉTRICAS */}
 
               <div className="grid grid-cols-4 gap-4">
 
-                <div className="bg-white rounded-[28px] shadow-lg p-6">
-                  <p className="text-gray-500 text-sm">Consumo Médio</p>
-                  <h3 className="text-4xl font-black text-[#832472] mt-4">
+                <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-4">
+
+                  <p className="text-gray-500 text-xs">
+                    Consumo Médio
+                  </p>
+
+                  <h3 className="text-3xl font-extrabold text-[#832472] mt-2">
                     {dados.mediaKwh}
                   </h3>
-                  <p className="text-gray-500 mt-2 text-sm">kWh/mês</p>
+
+                  <p className="text-gray-500 mt-1 text-xs">
+                    kWh/mês
+                  </p>
+
                 </div>
 
-                <div className="bg-white rounded-[28px] shadow-lg p-6">
-                  <p className="text-gray-500 text-sm">Desconto</p>
-                  <h3 className="text-4xl font-black text-[#16968D] mt-4">
+                <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-4">
+
+                  <p className="text-gray-500 text-xs">
+                    Desconto
+                  </p>
+
+                  <h3 className="text-3xl font-extrabold text-[#16968D] mt-2">
                     {dados.desconto}%
                   </h3>
-                  <p className="text-gray-500 mt-2 text-sm">estimado</p>
+
+                  <p className="text-gray-500 mt-1 text-xs">
+                    estimado
+                  </p>
+
                 </div>
 
-                <div className="bg-white rounded-[28px] shadow-lg p-6">
-                  <p className="text-gray-500 text-sm">Economia Mensal</p>
-                  <h3 className="text-4xl font-black text-[#282828] mt-4">
+                <div className="bg-white rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-4">
+
+                  <p className="text-gray-500 text-xs">
+                    Economia Mensal
+                  </p>
+
+                  <h3 className="text-3xl font-extrabold text-[#282828] mt-2">
                     R$ {dados.economiaMensal?.toFixed(0)}
                   </h3>
-                  <p className="text-gray-500 mt-2 text-sm">aproximadamente</p>
+
+                  <p className="text-gray-500 mt-1 text-xs">
+                    aproximadamente
+                  </p>
+
                 </div>
 
-                <div className="bg-[#FFC837] rounded-[28px] shadow-lg p-6">
-                  <p className="text-[#832472] font-bold text-sm">Economia Anual</p>
-                  <h3 className="text-4xl font-black text-[#832472] mt-4">
+                <div className="bg-[#FFC837] rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-4">
+
+                  <p className="text-[#832472] font-bold text-xs">
+                    Economia Anual
+                  </p>
+
+                  <h3 className="text-3xl font-extrabold text-[#832472] mt-2">
                     R$ {dados.economiaAnual?.toFixed(0)}
                   </h3>
-                  <p className="text-[#832472] mt-2 text-sm">estimativa anual</p>
+
+                  <p className="text-[#832472] mt-1 text-xs">
+                    estimativa anual
+                  </p>
+
                 </div>
 
               </div>
 
-              <div className="grid grid-cols-2 gap-6 mt-6">
+              {/* CONTEÚDO */}
 
-                <div className="bg-white rounded-[32px] shadow-lg p-6">
+              <div className="grid grid-cols-2 gap-4 mt-4">
 
-                  <h3 className="text-3xl font-black text-[#282828]">
+                {/* COMPARATIVO */}
+
+                <div className="bg-white rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-5">
+
+                  <h3 className="text-2xl font-extrabold text-[#282828]">
                     Comparativo Financeiro
                   </h3>
 
-                  <div className="mt-6 space-y-5 text-lg">
+                  <div className="mt-5 space-y-4 text-base">
 
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Conta atual estimada</span>
-                      <strong>R$ {dados.contaAtual?.toFixed(0)}</strong>
-                    </div>
 
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Conta com desconto Órigo</span>
+                      <span className="text-gray-600">
+                        Conta com desconto Órigo
+                      </span>
+
                       <strong className="text-[#16968D]">
                         R$ {dados.contaComDesconto?.toFixed(0)}
                       </strong>
+
                     </div>
 
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Economia mensal</span>
+
+                      <span className="text-gray-600">
+                        Economia mensal
+                      </span>
+
                       <strong className="text-[#832472]">
                         R$ {dados.economiaMensal?.toFixed(0)}
                       </strong>
+
                     </div>
 
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Economia anual projetada</span>
+
+                      <span className="text-gray-600">
+                        Economia anual
+                      </span>
+
                       <strong className="text-[#832472]">
                         R$ {dados.economiaAnual?.toFixed(0)}
                       </strong>
+
                     </div>
 
                   </div>
 
-                  <div className="mt-6 bg-[#F7F7F7] rounded-[24px] p-5 border border-gray-100">
+                  <div className="mt-5 bg-[#F7F7F7] rounded-[20px] p-4 border border-gray-100">
 
-                    <h3 className="text-lg font-black text-[#832472] leading-relaxed">
-                      Em 3 anos, a economia projetada poderá ultrapassar
+                    <h3 className="text-lg font-extrabold text-[#832472] leading-relaxed">
+                      Em 3 anos, sua economia poderá ultrapassar
                       R$ {(dados.economiaAnual * 3)?.toFixed(0)}.
                     </h3>
 
@@ -442,121 +521,107 @@ export default function PreviewProposta() {
 
                 </div>
 
-                <div className="bg-white rounded-[32px] shadow-lg p-6">
+                {/* COMO FUNCIONA */}
 
-                  <h3 className="text-3xl font-black text-[#282828]">
+                <div className="bg-white rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-5">
+
+                  <h3 className="text-2xl font-extrabold text-[#282828]">
                     Como funciona?
                   </h3>
 
-                  <div className="mt-6 space-y-5">
+                  <div className="mt-5 space-y-4">
 
                     <div className="flex gap-4">
 
-                      <div className="w-12 h-12 rounded-full bg-[#832472] text-white flex items-center justify-center font-black text-lg">
+                      <div className="w-9 h-9 rounded-full bg-[#832472] text-white flex items-center justify-center font-black text-sm">
                         1
                       </div>
 
                       <div>
-                        <h4 className="text-xl font-black text-[#282828]">
+
+                        <h4 className="text-base font-extrabold text-[#282828]">
                           Energia renovável
                         </h4>
 
-                        <p className="text-gray-600 mt-1 text-base leading-relaxed">
+                        <p className="text-gray-600 mt-1 text-sm leading-relaxed">
                           A Órigo injeta energia limpa na rede da distribuidora.
                         </p>
+
                       </div>
 
                     </div>
 
                     <div className="flex gap-4">
 
-                      <div className="w-12 h-12 rounded-full bg-[#16968D] text-white flex items-center justify-center font-black text-lg">
+                      <div className="w-9 h-9 rounded-full bg-[#16968D] text-white flex items-center justify-center font-black text-sm">
                         2
                       </div>
 
                       <div>
-                        <h4 className="text-xl font-black text-[#282828]">
+
+                        <h4 className="text-base font-extrabold text-[#282828]">
                           Compensação automática
                         </h4>
 
-                        <p className="text-gray-600 mt-1 text-base leading-relaxed">
-                          A distribuidora aplica os créditos diretamente na conta.
+                        <p className="text-gray-600 mt-1 text-sm leading-relaxed">
+                          Os créditos são aplicados diretamente na conta.
                         </p>
+
                       </div>
 
                     </div>
 
                     <div className="flex gap-4">
 
-                      <div className="w-12 h-12 rounded-full bg-[#FFC837] text-[#832472] flex items-center justify-center font-black text-lg">
+                      <div className="w-9 h-9 rounded-full bg-[#FFC837] text-[#832472] flex items-center justify-center font-black text-sm">
                         3
                       </div>
 
                       <div>
-                        <h4 className="text-xl font-black text-[#282828]">
+
+                        <h4 className="text-base font-extrabold text-[#282828]">
                           Economia recorrente
                         </h4>
 
-                        <p className="text-gray-600 mt-1 text-base leading-relaxed">
-                          O cliente recebe desconto mensal sem necessidade de instalação.
+                        <p className="text-gray-600 mt-1 text-sm leading-relaxed">
+                          Desconto mensal sem necessidade de instalação.
                         </p>
+
                       </div>
 
                     </div>
 
                   </div>
 
-                  <div className="mt-5 bg-[#FAF2FA] border border-[#832472]/10 rounded-[24px] p-5">
-                    <h3 className="text-xl font-black text-[#832472] leading-relaxed">
+                  {/* BLOCO INFO */}
+
+                  <div className="mt-4 bg-[#FAF2FA] border border-[#832472]/10 rounded-[18px] p-4">
+
+                    <h3 className="text-base font-extrabold text-[#832472] leading-relaxed">
                       Sem obras. Sem equipamentos. Sem interrupções.
                     </h3>
+
                   </div>
 
-                  <div className="mt-5 bg-[#F7F7F7] border border-gray-200 rounded-[24px] p-5">
-                    <p className="text-base text-[#282828] font-semibold leading-relaxed">
-                      Solução homologada e integrada à distribuidora local.
-                    </p>
-                  </div>
+                  {/* SELOS */}
 
-                  <div className="mt-5 bg-gradient-to-r from-[#832472] to-[#5A189A] rounded-[28px] p-6 text-white shadow-xl">
+                  <div className="mt-4 flex flex-wrap gap-2">
 
-                    <p className="text-purple-200 uppercase tracking-[3px] text-xs">
-                      Próximo passo
-                    </p>
-
-                    <h2 className="text-2xl font-black mt-3 leading-tight">
-                      Pronto para começar sua economia inteligente?
-                    </h2>
-
-                    <p className="mt-3 text-base text-purple-100 leading-relaxed">
-                      A Órigo Energia está pronta para ajudar você a economizar de forma simples, moderna e sustentável.
-                    </p>
-
-                    <div className="mt-5 pt-4 border-t border-white/20">
-
-                      <p className="text-purple-200 text-sm">
-                        Atendimento especializado
-                      </p>
-
-                      <h3 className="text-lg font-black mt-2">
-                        Executivo de Negócios Órigo Energia
-                      </h3>
-
+                    <div className="bg-[#F3F3F3] border border-gray-200 rounded-full px-3 py-2 text-[11px] font-semibold text-gray-700">
+                      ✓ Economia recorrente
                     </div>
 
-                  </div>
+                    <div className="bg-[#F3F3F3] border border-gray-200 rounded-full px-3 py-2 text-[11px] font-semibold text-gray-700">
+                      ✓ Sem instalação
+                    </div>
 
-                  <div className="mt-4 flex items-center justify-between border-t border-gray-200 pt-3">
+                    <div className="bg-[#F3F3F3] border border-gray-200 rounded-full px-3 py-2 text-[11px] font-semibold text-gray-700">
+                      ✓ Sem fidelidade
+                    </div>
 
-                    <p className="text-sm text-gray-500">
-                      Energia limpa. Economia inteligente.
-                    </p>
-
-                    <img
-                      src={logo}
-                      alt="Órigo Energia"
-                      className="w-24 opacity-90"
-                    />
+                    <div className="bg-[#F3F3F3] border border-gray-200 rounded-full px-3 py-2 text-[11px] font-semibold text-gray-700">
+                      ✓ Energia limpa homologada
+                    </div>
 
                   </div>
 

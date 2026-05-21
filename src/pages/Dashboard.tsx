@@ -7,7 +7,7 @@ export default function Dashboard() {
 
     <Layout>
 
-      <div className="space-y-10">
+      <div className="space-y-8">
 
         {/* HERO */}
 
@@ -15,41 +15,42 @@ export default function Dashboard() {
           className="
             relative
             overflow-hidden
-            rounded-[40px]
+            rounded-[36px]
             bg-gradient-to-r
             from-[#832472]
             to-[#5A189A]
-            p-12
+            px-10
+            py-10
             text-white
             shadow-2xl
           "
         >
 
-          {/* ELEMENTOS DECORATIVOS */}
+          {/* EFEITOS */}
 
           <div
             className="
               absolute
-              top-[-120px]
-              right-[-120px]
-              w-[320px]
-              h-[320px]
+              top-[-100px]
+              right-[-100px]
+              w-[260px]
+              h-[260px]
               rounded-full
               bg-[#A4328C]
-              opacity-30
+              opacity-20
             "
           />
 
           <div
             className="
               absolute
-              bottom-[-100px]
-              left-[-100px]
-              w-[250px]
-              h-[250px]
+              bottom-[-90px]
+              left-[-90px]
+              w-[220px]
+              h-[220px]
               rounded-full
               bg-[#FFC837]
-              opacity-20
+              opacity-10
             "
           />
 
@@ -58,9 +59,10 @@ export default function Dashboard() {
             <p
               className="
                 uppercase
-                tracking-[5px]
-                text-sm
+                tracking-[4px]
+                text-xs
                 text-purple-200
+                font-semibold
               "
             >
               Plataforma Comercial Órigo Energia
@@ -68,47 +70,47 @@ export default function Dashboard() {
 
             <h1
               className="
-                text-5xl
+                text-4xl
                 font-black
-                mt-5
+                mt-4
                 leading-tight
-                max-w-4xl
+                max-w-3xl
               "
             >
-              Transforme contas de energia em
-              economia inteligente.
+              Gere propostas comerciais
+              premium com rapidez.
             </h1>
 
             <p
               className="
-                mt-6
-                text-xl
+                mt-4
+                text-lg
                 text-purple-100
-                max-w-3xl
+                max-w-2xl
                 leading-relaxed
               "
             >
-              Gere propostas comerciais premium para clientes residenciais
-              e empresas utilizando soluções modernas de energia por assinatura.
+              Plataforma inteligente para geração de propostas
+              comerciais com energia por assinatura.
             </p>
 
             {/* BOTÕES */}
 
-            <div className="flex gap-6 mt-10">
+            <div className="flex gap-4 mt-8">
 
               <Link
                 to="/nova-proposta"
                 className="
                   bg-[#FFC837]
-                  hover:scale-105
+                  hover:scale-[1.02]
                   transition-all
                   text-[#832472]
-                  px-10
-                  py-5
-                  rounded-[22px]
+                  px-8
+                  py-4
+                  rounded-[18px]
                   font-black
-                  text-xl
-                  shadow-2xl
+                  text-lg
+                  shadow-xl
                 "
               >
                 Nova Proposta
@@ -124,14 +126,14 @@ export default function Dashboard() {
                   hover:bg-white/20
                   transition-all
                   text-white
-                  px-10
-                  py-5
-                  rounded-[22px]
+                  px-8
+                  py-4
+                  rounded-[18px]
                   font-black
-                  text-xl
+                  text-lg
                 "
               >
-                Visualizar Proposta
+                Visualizar
               </Link>
 
             </div>
@@ -142,183 +144,36 @@ export default function Dashboard() {
 
         {/* CARDS */}
 
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-4 gap-5">
 
           {/* CARD 1 */}
 
-          <div
-            className="
-              bg-white
-              rounded-[32px]
-              shadow-xl
-              p-10
-              border
-              border-gray-100
-              hover:-translate-y-1
-              transition-all
-            "
-          >
-
-            <p className="text-gray-500 text-lg">
-              Economia Média
-            </p>
-
-            <h2
-              className="
-                text-6xl
-                font-black
-                text-[#16968D]
-                mt-5
-              "
-            >
-              18%
-            </h2>
-
-            <p
-              className="
-                text-gray-500
-                text-xl
-                mt-4
-                leading-relaxed
-              "
-            >
-              desconto estimado
-            </p>
-
-          </div>
-
-          {/* CARD 2 */}
-
-          <div
-            className="
-              bg-white
-              rounded-[32px]
-              shadow-xl
-              p-10
-              border
-              border-gray-100
-              hover:-translate-y-1
-              transition-all
-            "
-          >
-
-            <p className="text-gray-500 text-lg">
-              Modelo
-            </p>
-
-            <h2
-              className="
-                text-5xl
-                font-black
-                text-[#832472]
-                mt-5
-                leading-tight
-              "
-            >
-              Sem
-              instalação
-            </h2>
-
-            <p
-              className="
-                text-gray-500
-                text-xl
-                mt-4
-                leading-relaxed
-              "
-            >
-              energia por assinatura
-            </p>
-
-          </div>
-
-          {/* CARD 3 NOVO */}
-
-          <div
-            className="
-              bg-[#16968D]
-              rounded-[32px]
-              shadow-xl
-              p-10
-              text-white
-              hover:-translate-y-1
-              transition-all
-              relative
-              overflow-hidden
-            "
-          >
-
-            {/* EFEITO */}
-
-            <div
-              className="
-                absolute
-                top-[-60px]
-                right-[-60px]
-                w-[160px]
-                h-[160px]
-                rounded-full
-                bg-white/10
-              "
-            />
-
-            <div className="relative z-10">
-
-              <p className="text-white/80 text-lg">
-                Solução Homologada
-              </p>
-
-              <h2
-                className="
-                  text-5xl
-                  font-black
-                  mt-5
-                  leading-tight
-                "
-              >
-                Sem
-                Fidelidade
-              </h2>
-
-              <p
-                className="
-                  text-white/80
-                  text-xl
-                  mt-4
-                  leading-relaxed
-                "
-              >
-                adesão simples
-                <br />
-                e sem burocracia
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* CARD 4 */}
-
-          <div
+          <Link
+            to="/nova-proposta"
             className="
               bg-[#FFC837]
-              rounded-[32px]
+              rounded-[28px]
               shadow-xl
-              p-10
+              p-7
               relative
               overflow-hidden
               hover:-translate-y-1
+              hover:scale-[1.01]
               transition-all
+              min-h-[220px]
+              flex
+              flex-col
+              justify-between
             "
           >
 
             <div
               className="
                 absolute
-                bottom-[-50px]
-                right-[-50px]
-                w-[150px]
-                h-[150px]
+                bottom-[-40px]
+                right-[-40px]
+                w-[130px]
+                h-[130px]
                 rounded-full
                 bg-white/20
               "
@@ -329,176 +184,173 @@ export default function Dashboard() {
               <p
                 className="
                   text-[#832472]
-                  text-lg
+                  text-sm
                   font-semibold
                 "
               >
-                Energia Inteligente
+                Principal ação
+              </p>
+
+              <h2
+                className="
+                  text-4xl
+                  font-black
+                  text-[#832472]
+                  mt-4
+                  leading-tight
+                "
+              >
+                Criar
+                <br />
+                Proposta
+              </h2>
+
+            </div>
+
+            <p
+              className="
+                relative
+                z-10
+                text-[#832472]
+                text-base
+                leading-relaxed
+                font-medium
+              "
+            >
+              Gere propostas premium
+              em poucos minutos.
+            </p>
+
+          </Link>
+
+          {/* CARD 2 */}
+
+          <Link
+            to="/preview"
+            className="
+              bg-white
+              rounded-[28px]
+              shadow-xl
+              border
+              border-gray-100
+              p-7
+              hover:-translate-y-1
+              hover:scale-[1.01]
+              transition-all
+              min-h-[220px]
+              flex
+              flex-col
+              justify-between
+            "
+          >
+
+            <div>
+
+              <p className="text-gray-500 text-sm">
+                Histórico
+              </p>
+
+              <h2
+                className="
+                  text-4xl
+                  font-black
+                  text-[#832472]
+                  mt-4
+                  leading-tight
+                "
+              >
+                Propostas
+              </h2>
+
+            </div>
+
+            <p
+              className="
+                text-gray-500
+                text-base
+                leading-relaxed
+              "
+            >
+              Visualize rapidamente
+              propostas geradas.
+            </p>
+
+          </Link>
+
+          {/* CARD 3 */}
+
+          <div
+            className="
+              bg-white
+              rounded-[28px]
+              shadow-xl
+              border
+              border-gray-100
+              p-7
+              min-h-[220px]
+              flex
+              flex-col
+              justify-between
+            "
+          >
+
+            <div>
+
+              <p className="text-gray-500 text-sm">
+                Economia média
               </p>
 
               <h2
                 className="
                   text-6xl
                   font-black
-                  text-[#832472]
-                  mt-6
+                  text-[#16968D]
+                  mt-3
                 "
               >
-                Órigo
+                18%
               </h2>
 
-              <p
-                className="
-                  text-[#832472]
-                  text-xl
-                  mt-5
-                  leading-relaxed
-                "
-              >
-                sustentabilidade
-                <br />
-                e economia
-              </p>
-
             </div>
-
-          </div>
-
-        </div>
-
-        {/* SEÇÃO INFERIOR */}
-
-        <div className="grid grid-cols-3 gap-6">
-
-          {/* CARD */}
-
-          <div
-            className="
-              bg-white
-              rounded-[32px]
-              shadow-xl
-              p-8
-              border
-              border-gray-100
-            "
-          >
-
-            <div
-              className="
-                w-16
-                h-16
-                rounded-full
-                bg-[#832472]/10
-                flex
-                items-center
-                justify-center
-                text-3xl
-              "
-            >
-              ⚡
-            </div>
-
-            <h3
-              className="
-                text-3xl
-                font-black
-                text-[#282828]
-                mt-6
-              "
-            >
-              Sem Obras
-            </h3>
 
             <p
               className="
-                text-gray-600
-                text-lg
-                mt-4
+                text-gray-500
+                text-base
                 leading-relaxed
               "
             >
-              O cliente começa a economizar sem instalação
-              de equipamentos ou mudanças na estrutura elétrica.
+              desconto estimado
+              na conta de energia.
             </p>
 
           </div>
 
-          {/* CARD */}
+          {/* CARD 4 */}
 
           <div
             className="
-              bg-white
-              rounded-[32px]
+              bg-[#16968D]
+              rounded-[28px]
               shadow-xl
-              p-8
-              border
-              border-gray-100
-            "
-          >
-
-            <div
-              className="
-                w-16
-                h-16
-                rounded-full
-                bg-[#16968D]/10
-                flex
-                items-center
-                justify-center
-                text-3xl
-              "
-            >
-              💰
-            </div>
-
-            <h3
-              className="
-                text-3xl
-                font-black
-                text-[#282828]
-                mt-6
-              "
-            >
-              Economia Recorrente
-            </h3>
-
-            <p
-              className="
-                text-gray-600
-                text-lg
-                mt-4
-                leading-relaxed
-              "
-            >
-              Desconto mensal automático na conta de energia
-              através de geração distribuída compartilhada.
-            </p>
-
-          </div>
-
-          {/* CARD */}
-
-          <div
-            className="
-              bg-gradient-to-r
-              from-[#832472]
-              to-[#5A189A]
-              rounded-[32px]
-              shadow-xl
-              p-8
+              p-7
               text-white
               relative
               overflow-hidden
+              min-h-[220px]
+              flex
+              flex-col
+              justify-between
             "
           >
 
             <div
               className="
                 absolute
-                top-[-70px]
-                right-[-70px]
-                w-[180px]
-                h-[180px]
+                top-[-40px]
+                right-[-40px]
+                w-[120px]
+                h-[120px]
                 rounded-full
                 bg-white/10
               "
@@ -506,41 +358,38 @@ export default function Dashboard() {
 
             <div className="relative z-10">
 
-              <p
-                className="
-                  uppercase
-                  tracking-[4px]
-                  text-xs
-                  text-purple-200
-                "
-              >
-                Plataforma Premium
+              <p className="text-white/80 text-sm">
+                Solução homologada
               </p>
 
-              <h3
+              <h2
                 className="
                   text-4xl
                   font-black
-                  mt-5
+                  mt-4
                   leading-tight
                 "
               >
-                Propostas profissionais em poucos minutos.
-              </h3>
-
-              <p
-                className="
-                  text-purple-100
-                  text-lg
-                  mt-5
-                  leading-relaxed
-                "
-              >
-                Gere apresentações comerciais premium para aumentar
-                conversão e fortalecer sua autoridade comercial.
-              </p>
+                Sem
+                <br />
+                fidelidade
+              </h2>
 
             </div>
+
+            <p
+              className="
+                relative
+                z-10
+                text-white/90
+                text-base
+                leading-relaxed
+              "
+            >
+              Adesão simples,
+              sem burocracia
+              e sem instalação.
+            </p>
 
           </div>
 
@@ -549,5 +398,6 @@ export default function Dashboard() {
       </div>
 
     </Layout>
+
   )
 }

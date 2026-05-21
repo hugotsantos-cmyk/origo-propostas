@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
 
-  const [email, setEmail] = useState('')
+  const [usuario, setUsuario] = useState('')
   const [senha, setSenha] = useState('')
 
   const navigate = useNavigate()
@@ -12,7 +12,7 @@ export default function Login() {
 
     e.preventDefault()
 
-    if (email && senha) {
+    if (usuario && senha) {
       navigate('/dashboard')
     }
 
@@ -107,6 +107,8 @@ export default function Login() {
             className="mt-10 space-y-5"
           >
 
+            {/* USUÁRIO */}
+
             <div>
 
               <label
@@ -116,14 +118,14 @@ export default function Login() {
                   text-gray-600
                 "
               >
-                E-mail
+                Usuário
               </label>
 
               <input
-                type="email"
-                placeholder="Digite seu e-mail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                placeholder="Digite seu usuário"
+                value={usuario}
+                onChange={(e) => setUsuario(e.target.value)}
                 className="
                   w-full
                   mt-2
@@ -140,6 +142,8 @@ export default function Login() {
               />
 
             </div>
+
+            {/* SENHA */}
 
             <div>
 
@@ -174,6 +178,8 @@ export default function Login() {
               />
 
             </div>
+
+            {/* BOTÃO ENTRAR */}
 
             <button
               type="submit"
