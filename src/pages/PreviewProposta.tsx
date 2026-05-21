@@ -153,15 +153,15 @@ export default function PreviewProposta() {
 
                 <div>
 
-                  <div className="flex flex-col items-start mb-1">
+                  <div className="flex flex-col items-start mb-0">
 
                     <img
                       src={logo}
                       alt="Órigo Energia"
                       className="
-                        w-24
+                        w-16
                         object-contain
-                        opacity-95
+                        opacity-90
                       "
                     />
 
