@@ -28,60 +28,48 @@ export default function Sidebar() {
   ]
 
   return (
+
     <aside
       className="
-        w-[320px]
+        w-[280px]
+        lg:w-[300px]
         min-h-screen
         bg-white
         border-r
         border-gray-100
-        shadow-xl
         flex
         flex-col
         justify-between
-        relative
-        overflow-hidden
       "
     >
 
-      {/* SOL */}
-
-      <div
-        className="
-          absolute
-          top-[-120px]
-          right-[-120px]
-          w-[260px]
-          h-[260px]
-          rounded-full
-          bg-[#FFC837]
-          opacity-80
-        "
-      />
-
       {/* CONTEÚDO */}
 
-      <div className="relative z-10">
+      <div>
 
         {/* LOGO */}
 
-        <div className="p-10">
+        <div className="px-6 pt-8 pb-6">
 
           <img
             src={logo}
             alt="Órigo Energia"
-            className="w-40"
+            className="
+              w-24
+              lg:w-32
+              opacity-90
+            "
           />
 
           <p
             className="
               text-gray-500
-              mt-6
-              text-lg
+              mt-4
+              text-sm
               leading-relaxed
             "
           >
-            Plataforma comercial premium para geração
+            Plataforma comercial para geração
             de propostas inteligentes.
           </p>
 
@@ -89,7 +77,7 @@ export default function Sidebar() {
 
         {/* MENU */}
 
-        <div className="px-6 mt-6 space-y-3">
+        <nav className="px-4 space-y-2">
 
           {menus.map((menu) => {
 
@@ -104,13 +92,12 @@ export default function Sidebar() {
                 className={`
                   flex
                   items-center
-                  gap-5
-                  px-6
-                  py-5
-                  rounded-[24px]
+                  gap-4
+                  px-5
+                  py-4
+                  rounded-2xl
                   transition-all
-                  duration-300
-                  text-xl
+                  text-base
                   font-bold
 
                   ${
@@ -118,7 +105,6 @@ export default function Sidebar() {
                       ? `
                         bg-[#832472]
                         text-white
-                        shadow-xl
                       `
                       : `
                         text-[#282828]
@@ -128,7 +114,7 @@ export default function Sidebar() {
                 `}
               >
 
-                <span className="text-2xl">
+                <span className="text-xl">
                   {menu.icone}
                 </span>
 
@@ -141,99 +127,74 @@ export default function Sidebar() {
             )
           })}
 
-        </div>
+        </nav>
 
       </div>
 
       {/* FOOTER */}
 
-      <div className="relative z-10 p-8">
+      <div className="p-4">
 
         <div
           className="
-            bg-gradient-to-r
-            from-[#832472]
-            to-[#5A189A]
-            rounded-[32px]
-            p-8
+            bg-[#832472]
+            rounded-[24px]
+            p-5
             text-white
-            shadow-xl
-            overflow-hidden
-            relative
           "
         >
 
-          {/* CÍRCULO */}
+          <p className="text-purple-200 text-xs">
+            Energia Inteligente
+          </p>
 
-          <div
+          <h2
             className="
-              absolute
-              bottom-[-70px]
-              right-[-70px]
-              w-[180px]
-              h-[180px]
-              rounded-full
-              bg-[#A4328C]
-              opacity-40
+              text-xl
+              font-black
+              mt-3
+              leading-tight
             "
-          />
+          >
+            Economia com
+            energia renovável.
+          </h2>
 
-          <div className="relative z-10">
+          <div className="mt-5 space-y-2">
 
-            <p className="text-purple-200 text-sm">
-              Energia Inteligente
-            </p>
+            <div className="flex items-center gap-2">
 
-            <h2
-              className="
-                text-3xl
-                font-black
-                mt-4
-                leading-tight
-              "
-            >
-              Economia
-              com energia
-              renovável.
-            </h2>
+              <span className="text-[#FFC837]">
+                ●
+              </span>
 
-            <div className="mt-8 space-y-3">
+              <span className="text-sm">
+                Sem instalação
+              </span>
 
-              <div className="flex items-center gap-3">
+            </div>
 
-                <span className="text-[#FFC837]">
-                  ●
-                </span>
+            <div className="flex items-center gap-2">
 
-                <span className="text-lg">
-                  Sem instalação
-                </span>
+              <span className="text-[#FFC837]">
+                ●
+              </span>
 
-              </div>
+              <span className="text-sm">
+                Sem obras
+              </span>
 
-              <div className="flex items-center gap-3">
+            </div>
 
-                <span className="text-[#FFC837]">
-                  ●
-                </span>
+            <div className="flex items-center gap-2">
 
-                <span className="text-lg">
-                  Sem obras
-                </span>
+              <span className="text-[#FFC837]">
+                ●
+              </span>
 
-              </div>
-
-              <div className="flex items-center gap-3">
-
-                <span className="text-[#FFC837]">
-                  ●
-                </span>
-
-                <span className="text-lg">
-                  Energia sustentável
-                </span>
-
-              </div>
+              <span className="text-sm">
+                Energia sustentável
+              </span>
 
             </div>
 
@@ -244,5 +205,6 @@ export default function Sidebar() {
       </div>
 
     </aside>
+
   )
 }
