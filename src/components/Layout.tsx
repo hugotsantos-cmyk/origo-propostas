@@ -12,68 +12,157 @@ export default function Layout({
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="flex bg-[#EEF2F7] min-h-screen">
+
+    <div
+      className="
+        min-h-screen
+        bg-[#EEF2F7]
+        flex
+      "
+    >
 
       {/* SIDEBAR DESKTOP */}
 
-      <div className="hidden lg:block">
+      <aside
+        className="
+          hidden
+          lg:flex
+          flex-shrink-0
+        "
+      >
         <Sidebar />
-      </div>
+      </aside>
 
-      {/* SIDEBAR MOBILE */}
+      {/* MOBILE MENU */}
 
       {menuOpen && (
-        <div className="fixed inset-0 z-50 flex">
+
+        <div
+          className="
+            fixed
+            inset-0
+            z-50
+            lg:hidden
+          "
+        >
 
           {/* OVERLAY */}
 
-          <div
-            className="absolute inset-0 bg-black/50"
+          <button
+            className="
+              absolute
+              inset-0
+              bg-black/30
+            "
             onClick={() => setMenuOpen(false)}
           />
 
-          {/* MENU */}
+          {/* SIDEBAR */}
 
-          <div className="relative z-50">
+          <div
+            className="
+              relative
+              z-50
+              w-[280px]
+              max-w-[85vw]
+              h-full
+              bg-white
+              shadow-xl
+            "
+          >
 
             <Sidebar />
 
           </div>
 
         </div>
+
       )}
 
       {/* CONTEÚDO */}
 
-      <main className="flex-1 overflow-auto">
+      <main
+        className="
+          flex-1
+          min-w-0
+        "
+      >
 
         {/* HEADER MOBILE */}
 
-        <div className="lg:hidden bg-white px-6 py-5 shadow-sm flex items-center justify-between">
+        <header
+          className="
+            lg:hidden
+            sticky
+            top-0
+            z-40
+            bg-white/95
+            backdrop-blur-sm
+            border-b
+            border-gray-100
+            px-4
+            py-4
+            flex
+            items-center
+            justify-between
+          "
+        >
+
+          {/* MENU BUTTON */}
 
           <button
             onClick={() => setMenuOpen(true)}
-            className="bg-slate-900 text-white w-12 h-12 rounded-2xl text-2xl"
+            className="
+              w-11
+              h-11
+              rounded-2xl
+              bg-[#832472]
+              text-white
+              text-xl
+              flex
+              items-center
+              justify-center
+              active:scale-95
+              transition-transform
+            "
           >
             ☰
           </button>
 
-          <h2 className="text-xl font-bold text-gray-900">
+          {/* LOGO */}
+
+          <h1
+            className="
+              text-base
+              font-black
+              text-[#832472]
+              tracking-tight
+            "
+          >
             Órigo Energia
-          </h2>
+          </h1>
 
-          <div className="w-12" />
+          {/* SPACE */}
 
-        </div>
+          <div className="w-11" />
+
+        </header>
 
         {/* PÁGINA */}
 
-        <div className="p-4 lg:p-8">
+        <div
+          className="
+            p-4
+            md:p-6
+            lg:p-8
+          "
+        >
           {children}
         </div>
 
       </main>
 
     </div>
+
   )
 }
