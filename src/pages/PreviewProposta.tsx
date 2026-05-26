@@ -4,13 +4,89 @@ import logo from '../assets/logo.png'
 
 export default function PreviewProposta() {
 
-  const dados = JSON.parse(localStorage.getItem('proposta') || '{}')
+  /* SAFE STORAGE */
+
+  const propostaStorage =
+    localStorage.getItem('proposta')
+
+  const dados =
+    propostaStorage
+      ? JSON.parse(propostaStorage)
+      : null
+
+  /* FALLBACK */
+
+  if (!dados) {
+
+    return (
+
+      <Layout>
+
+        <div
+          className="
+            min-h-[80vh]
+            flex
+            items-center
+            justify-center
+            px-6
+          "
+        >
+
+          <div
+            className="
+              bg-white
+              rounded-[32px]
+              shadow-2xl
+              p-10
+              max-w-xl
+              w-full
+              text-center
+            "
+          >
+
+            <h1
+              className="
+                text-3xl
+                font-extrabold
+                text-[#832472]
+              "
+            >
+              Nenhuma proposta encontrada
+            </h1>
+
+            <p
+              className="
+                text-gray-600
+                mt-4
+                leading-relaxed
+              "
+            >
+              Crie uma nova proposta para visualizar o preview.
+            </p>
+
+          </div>
+
+        </div>
+
+      </Layout>
+
+    )
+  }
+
+  /* PDF */
 
   const gerarPDF = () => {
 
-    const elemento = document.getElementById('proposta')
+    const elemento =
+      document.getElementById('proposta')
+
+    if (!elemento) return
+
+    const isMobile =
+      window.innerWidth < 768
 
     const options = {
+
       margin: 0,
 
       filename: 'proposta-origo.pdf',
@@ -21,7 +97,7 @@ export default function PreviewProposta() {
       },
 
       html2canvas: {
-        scale: 3,
+        scale: isMobile ? 1.5 : 3,
         useCORS: true,
         letterRendering: true,
         allowTaint: true
@@ -45,10 +121,13 @@ export default function PreviewProposta() {
       .save()
   }
 
+  /* DADOS */
+
   const dataAtual =
     new Date().toLocaleDateString('pt-BR')
 
-  const isPJ = dados.tipoProposta === 'PJ'
+  const isPJ =
+    dados.tipoProposta === 'PJ'
 
   const tituloPrincipal = isPJ
     ? 'Redução inteligente de custos operacionais'
@@ -79,9 +158,12 @@ export default function PreviewProposta() {
     : 'Economia inteligente para sua residência'
 
   return (
+
     <Layout>
 
       <div className="max-w-7xl mx-auto">
+
+        {/* BOTÃO */}
 
         <div className="flex justify-end mb-6">
 
@@ -105,6 +187,8 @@ export default function PreviewProposta() {
 
         </div>
 
+        {/* PROPOSTA */}
+
         <div id="proposta" className="bg-[#ECECEC]">
 
           {/* ======================= */}
@@ -122,6 +206,8 @@ export default function PreviewProposta() {
             "
           >
 
+            {/* CÍRCULO */}
+
             <div
               className="
                 absolute
@@ -134,6 +220,8 @@ export default function PreviewProposta() {
                 opacity-90
               "
             />
+
+            {/* GRID */}
 
             <div
               className="
@@ -153,6 +241,8 @@ export default function PreviewProposta() {
 
                 <div>
 
+                  {/* LOGO */}
+
                   <div className="flex flex-col items-start mb-0">
 
                     <img
@@ -166,6 +256,8 @@ export default function PreviewProposta() {
                     />
 
                   </div>
+
+                  {/* TAG */}
 
                   <div
                     className="
@@ -188,9 +280,13 @@ export default function PreviewProposta() {
                     Economia • Sustentabilidade • Simplicidade
                   </div>
 
+                  {/* TEXTO PEQUENO */}
+
                   <p className="text-xs tracking-[3px] uppercase text-gray-400 mb-3">
                     SOLUÇÃO HOMOLOGADA ANEEL • ENERGIA LIMPA POR ASSINATURA
                   </p>
+
+                  {/* TÍTULO */}
 
                   <h1
                     className="
@@ -203,6 +299,8 @@ export default function PreviewProposta() {
                     {tituloPrincipal}
                   </h1>
 
+                  {/* CLIENTE */}
+
                   <h2
                     className="
                       text-3xl
@@ -213,6 +311,8 @@ export default function PreviewProposta() {
                   >
                     {dados.nomeCliente}
                   </h2>
+
+                  {/* SUBTÍTULO */}
 
                   <p
                     className="
@@ -231,6 +331,8 @@ export default function PreviewProposta() {
                 {/* CARDS */}
 
                 <div className="flex gap-4 mt-6">
+
+                  {/* CARD 1 */}
 
                   <div
                     className="
@@ -259,6 +361,8 @@ export default function PreviewProposta() {
 
                   </div>
 
+                  {/* CARD 2 */}
+
                   <div
                     className="
                       bg-white
@@ -286,6 +390,8 @@ export default function PreviewProposta() {
 
                   </div>
 
+                  {/* CARD 3 */}
+
                   <div
                     className="
                       bg-white
@@ -311,6 +417,8 @@ export default function PreviewProposta() {
 
                 </div>
 
+                {/* DATA */}
+
                 <p className="mt-5 text-gray-500 text-xs">
                   Proposta personalizada • {dataAtual}
                 </p>
@@ -335,6 +443,8 @@ export default function PreviewProposta() {
                   "
                 >
 
+                  {/* CÍRCULO INTERNO */}
+
                   <div
                     className="
                       absolute
@@ -347,6 +457,8 @@ export default function PreviewProposta() {
                       opacity-30
                     "
                   />
+
+                  {/* TAG */}
 
                   <div
                     className="
@@ -364,6 +476,8 @@ export default function PreviewProposta() {
                     Energia por Assinatura
                   </div>
 
+                  {/* TÍTULO */}
+
                   <h2 className="text-3xl font-extrabold leading-tight">
                     O jeito de
                     <br />
@@ -372,9 +486,13 @@ export default function PreviewProposta() {
                     mudou.
                   </h2>
 
+                  {/* TEXTO */}
+
                   <p className="mt-5 text-base leading-relaxed text-purple-100">
                     {textoLateral}
                   </p>
+
+                  {/* BULLETS */}
 
                   <div className="mt-6 space-y-3 text-base">
 
@@ -391,6 +509,8 @@ export default function PreviewProposta() {
                     ))}
 
                   </div>
+
+                  {/* SELO */}
 
                   <div
                     className="
@@ -417,353 +537,11 @@ export default function PreviewProposta() {
 
           </section>
 
-          {/* ======================= */}
-          {/* PÁGINA 2 */}
-          {/* ======================= */}
-
-          <section
-            className="
-              w-[297mm]
-              h-[210mm]
-              bg-white
-              overflow-hidden
-              relative
-              mx-auto
-            "
-          >
-
-            <div className="bg-gradient-to-r from-[#832472] to-[#5A189A] p-7 text-white">
-
-              <p className="uppercase tracking-[5px] text-xs text-purple-200">
-                SIMULAÇÃO FINANCEIRA
-              </p>
-
-              <h2 className="text-3xl font-extrabold leading-tight mt-3">
-                Economia projetada para
-                <br />
-                {dados.nomeCliente}
-              </h2>
-
-              <p className="mt-2 text-sm text-purple-100">
-                Proposta personalizada • válida para análise comercial
-              </p>
-
-            </div>
-
-            <div className="p-5">
-
-              <div className="grid grid-cols-4 gap-4">
-
-                <div
-                  className="
-                    bg-white
-                    border border-white/40
-                    backdrop-blur-sm
-                    rounded-[22px]
-                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
-                    px-4
-                    py-3
-                  "
-                >
-
-                  <p className="text-gray-500 text-xs">
-                    Consumo Médio
-                  </p>
-
-                  <h3 className="text-3xl font-extrabold text-[#832472] mt-2">
-                    {dados.mediaKwh}
-                  </h3>
-
-                  <p className="text-gray-500 mt-1 text-xs">
-                    kWh/mês
-                  </p>
-
-                </div>
-
-                <div
-                  className="
-                    bg-white
-                    border border-white/40
-                    backdrop-blur-sm
-                    rounded-[22px]
-                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
-                    px-4
-                    py-3
-                  "
-                >
-
-                  <p className="text-gray-500 text-xs">
-                    Desconto
-                  </p>
-
-                  <h3 className="text-3xl font-extrabold text-[#16968D] mt-2">
-                    {dados.desconto}%
-                  </h3>
-
-                  <p className="text-gray-500 mt-1 text-xs">
-                    estimado
-                  </p>
-
-                </div>
-
-                <div
-                  className="
-                    bg-white
-                    border border-white/40
-                    backdrop-blur-sm
-                    rounded-[22px]
-                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
-                    px-4
-                    py-3
-                  "
-                >
-
-                  <p className="text-gray-500 text-xs">
-                    Economia Mensal
-                  </p>
-
-                  <h3 className="text-3xl font-extrabold text-[#282828] mt-2">
-                    R$ {dados.economiaMensal?.toFixed(0)}
-                  </h3>
-
-                  <p className="text-gray-500 mt-1 text-xs">
-                    aproximadamente
-                  </p>
-
-                </div>
-
-                <div
-                  className="
-                    bg-[#FFC837]
-                    rounded-[22px]
-                    shadow-[0_10px_35px_rgba(131,36,114,0.10)]
-                    px-4
-                    py-3
-                  "
-                >
-
-                  <p className="text-[#832472] font-bold text-xs">
-                    Economia Anual
-                  </p>
-
-                  <h3 className="text-3xl font-extrabold text-[#832472] mt-2">
-                    R$ {dados.economiaAnual?.toFixed(0)}
-                  </h3>
-
-                  <p className="text-[#832472] mt-1 text-xs">
-                    estimativa anual
-                  </p>
-
-                </div>
-
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 mt-4">
-
-                <div
-                  className="
-                    bg-white
-                    border border-white/40
-                    backdrop-blur-sm
-                    rounded-[24px]
-                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
-                    p-5
-                  "
-                >
-
-                  <h3 className="text-2xl font-extrabold text-[#282828]">
-                    Comparativo Financeiro
-                  </h3>
-
-                  <div className="mt-5 space-y-4 text-base">
-
-                    <div className="flex justify-between border-b border-gray-100 pb-3">
-
-                      <span className="text-gray-600">
-                        Conta com desconto Órigo
-                      </span>
-
-                      <strong className="text-[#16968D]">
-                        R$ {dados.contaComDesconto?.toFixed(0)}
-                      </strong>
-
-                    </div>
-
-                    <div className="flex justify-between border-b border-gray-100 pb-3">
-
-                      <span className="text-gray-600">
-                        Economia mensal
-                      </span>
-
-                      <strong className="text-[#832472]">
-                        R$ {dados.economiaMensal?.toFixed(0)}
-                      </strong>
-
-                    </div>
-
-                    <div className="flex justify-between pb-1">
-
-                      <span className="text-gray-600">
-                        Economia anual
-                      </span>
-
-                      <strong className="text-[#832472]">
-                        R$ {dados.economiaAnual?.toFixed(0)}
-                      </strong>
-
-                    </div>
-
-                  </div>
-
-                  <div
-                    className="
-                      mt-5
-                      bg-[#FAF2FA]
-                      rounded-[16px]
-                      px-5
-                      py-3
-                      border
-                      border-[#832472]/10
-                    "
-                  >
-
-                    <h3 className="text-base font-extrabold text-[#832472] leading-relaxed">
-                      Em 3 anos, sua economia poderá ultrapassar
-                      R$ {(dados.economiaAnual * 3)?.toFixed(0)}.
-                    </h3>
-
-                  </div>
-
-                </div>
-
-                <div
-                  className="
-                    bg-white
-                    border border-white/40
-                    backdrop-blur-sm
-                    rounded-[24px]
-                    shadow-[0_4px_18px_rgba(15,23,42,0.05)]
-                    p-5
-                  "
-                >
-
-                  <h3 className="text-2xl font-extrabold text-[#282828]">
-                    Como funciona?
-                  </h3>
-
-                  <div className="mt-5 space-y-4">
-
-                    <div className="flex gap-4">
-
-                      <div className="w-9 h-9 rounded-full bg-[#832472] text-white flex items-center justify-center font-black text-sm">
-                        1
-                      </div>
-
-                      <div>
-
-                        <h4 className="text-[15px] font-extrabold text-[#282828]">
-                          Energia renovável
-                        </h4>
-
-                        <p className="text-gray-600 mt-1 text-sm leading-relaxed">
-                          A Órigo injeta energia limpa na rede da distribuidora.
-                        </p>
-
-                      </div>
-
-                    </div>
-
-                    <div className="flex gap-4">
-
-                      <div className="w-9 h-9 rounded-full bg-[#16968D] text-white flex items-center justify-center font-black text-sm">
-                        2
-                      </div>
-
-                      <div>
-
-                        <h4 className="text-[15px] font-extrabold text-[#282828]">
-                          Compensação automática
-                        </h4>
-
-                        <p className="text-gray-600 mt-1 text-sm leading-relaxed">
-                          Os créditos são aplicados diretamente na conta.
-                        </p>
-
-                      </div>
-
-                    </div>
-
-                    <div className="flex gap-4">
-
-                      <div className="w-9 h-9 rounded-full bg-[#FFC837] text-[#832472] flex items-center justify-center font-black text-sm">
-                        3
-                      </div>
-
-                      <div>
-
-                        <h4 className="text-[15px] font-extrabold text-[#282828]">
-                          Economia recorrente
-                        </h4>
-
-                        <p className="text-gray-600 mt-1 text-sm leading-relaxed">
-                          Desconto mensal sem necessidade de instalação.
-                        </p>
-
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div
-                    className="
-                      mt-4
-                      bg-[#FAF2FA]
-                      border
-                      border-[#832472]/10
-                      rounded-[18px]
-                      p-4
-                    "
-                  >
-
-                    <h3 className="text-base font-extrabold text-[#832472] leading-relaxed">
-                      Sem obras. Sem equipamentos. Sem interrupções.
-                    </h3>
-
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-
-                    <div className="bg-[#F3F3F3] border border-gray-200 rounded-full px-3 py-2 text-[11px] font-semibold text-gray-700">
-                      ✓ Economia recorrente
-                    </div>
-
-                    <div className="bg-[#F3F3F3] border border-gray-200 rounded-full px-3 py-2 text-[11px] font-semibold text-gray-700">
-                      ✓ Sem instalação
-                    </div>
-
-                    <div className="bg-[#F3F3F3] border border-gray-200 rounded-full px-3 py-2 text-[11px] font-semibold text-gray-700">
-                      ✓ Sem fidelidade
-                    </div>
-
-                    <div className="bg-[#F3F3F3] border border-gray-200 rounded-full px-3 py-2 text-[11px] font-semibold text-gray-700">
-                      ✓ Energia limpa homologada
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </section>
-
         </div>
 
       </div>
 
     </Layout>
+
   )
 }
