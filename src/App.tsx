@@ -5,10 +5,19 @@ import {
   Navigate
 } from 'react-router-dom'
 
-import Login from './pages/Login'
-import Dashboard from './pages/Dashboard'
-import NovaProposta from './pages/NovaProposta'
-import PreviewProposta from './pages/PreviewProposta'
+import {
+  lazy,
+  Suspense
+} from 'react'
+
+/* LAZY LOAD */
+
+const Login = lazy(() => import('./pages/Login'))
+const Dashboard = lazy(() => import('./pages/Dashboard'))
+const NovaProposta = lazy(() => import('./pages/NovaProposta'))
+const PreviewProposta = lazy(() => import('./pages/PreviewProposta'))
+
+/* PROTECTED ROUTE */
 
 function ProtectedRoute({
   children
@@ -26,55 +35,114 @@ function ProtectedRoute({
   return children
 }
 
+/* LOADING SCREEN */
+
+function LoadingScreen() {
+
+  return (
+
+    <div
+      className="
+        min-h-screen
+        flex
+        items-center
+        justify-center
+        bg-gradient-to-br
+        from-[#832472]
+        to-[#5A189A]
+      "
+    >
+
+      <div className="text-center">
+
+        <div
+          className="
+            w-16
+            h-16
+            border-4
+            border-white/30
+            border-t-white
+            rounded-full
+            animate-spin
+            mx-auto
+          "
+        />
+
+        <p
+          className="
+            text-white
+            mt-6
+            text-lg
+            font-semibold
+          "
+        >
+          Carregando plataforma...
+        </p>
+
+      </div>
+
+    </div>
+
+  )
+}
+
+/* APP */
+
 export default function App() {
 
   return (
+
     <BrowserRouter>
 
-      <Routes>
+      <Suspense fallback={<LoadingScreen />}>
 
-        {/* LOGIN */}
+        <Routes>
 
-        <Route
-          path="/"
-          element={<Login />}
-        />
+          {/* LOGIN */}
 
-        {/* DASHBOARD */}
+          <Route
+            path="/"
+            element={<Login />}
+          />
 
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+          {/* DASHBOARD */}
 
-        {/* NOVA PROPOSTA */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route
-          path="/nova-proposta"
-          element={
-            <ProtectedRoute>
-              <NovaProposta />
-            </ProtectedRoute>
-          }
-        />
+          {/* NOVA PROPOSTA */}
 
-        {/* PREVIEW */}
+          <Route
+            path="/nova-proposta"
+            element={
+              <ProtectedRoute>
+                <NovaProposta />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route
-          path="/preview"
-          element={
-            <ProtectedRoute>
-              <PreviewProposta />
-            </ProtectedRoute>
-          }
-        />
+          {/* PREVIEW */}
 
-      </Routes>
+          <Route
+            path="/preview"
+            element={
+              <ProtectedRoute>
+                <PreviewProposta />
+              </ProtectedRoute>
+            }
+          />
+
+        </Routes>
+
+      </Suspense>
 
     </BrowserRouter>
+
   )
 }
