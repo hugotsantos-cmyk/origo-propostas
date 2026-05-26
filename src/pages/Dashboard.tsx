@@ -7,7 +7,7 @@ export default function Dashboard() {
 
     <Layout>
 
-      <div className="space-y-8">
+      <div className="space-y-6 md:space-y-8">
 
         {/* HERO */}
 
@@ -15,12 +15,15 @@ export default function Dashboard() {
           className="
             relative
             overflow-hidden
-            rounded-[36px]
+            rounded-[28px]
+            md:rounded-[36px]
             bg-gradient-to-r
             from-[#832472]
             to-[#5A189A]
-            px-10
-            py-10
+            px-6
+            py-8
+            md:px-10
+            md:py-10
             text-white
             shadow-2xl
           "
@@ -33,8 +36,10 @@ export default function Dashboard() {
               absolute
               top-[-100px]
               right-[-100px]
-              w-[260px]
-              h-[260px]
+              w-[220px]
+              h-[220px]
+              md:w-[260px]
+              md:h-[260px]
               rounded-full
               bg-[#A4328C]
               opacity-20
@@ -46,8 +51,10 @@ export default function Dashboard() {
               absolute
               bottom-[-90px]
               left-[-90px]
-              w-[220px]
-              h-[220px]
+              w-[180px]
+              h-[180px]
+              md:w-[220px]
+              md:h-[220px]
               rounded-full
               bg-[#FFC837]
               opacity-10
@@ -59,8 +66,9 @@ export default function Dashboard() {
             <p
               className="
                 uppercase
-                tracking-[4px]
-                text-xs
+                tracking-[3px]
+                text-[10px]
+                md:text-xs
                 text-purple-200
                 font-semibold
               "
@@ -70,7 +78,8 @@ export default function Dashboard() {
 
             <h1
               className="
-                text-4xl
+                text-3xl
+                md:text-5xl
                 font-black
                 mt-4
                 leading-tight
@@ -84,7 +93,8 @@ export default function Dashboard() {
             <p
               className="
                 mt-4
-                text-lg
+                text-base
+                md:text-lg
                 text-purple-100
                 max-w-2xl
                 leading-relaxed
@@ -96,7 +106,15 @@ export default function Dashboard() {
 
             {/* BOTÕES */}
 
-            <div className="flex gap-4 mt-8">
+            <div
+              className="
+                flex
+                flex-col
+                sm:flex-row
+                gap-4
+                mt-8
+              "
+            >
 
               <Link
                 to="/nova-proposta"
@@ -105,12 +123,14 @@ export default function Dashboard() {
                   hover:scale-[1.02]
                   transition-all
                   text-[#832472]
-                  px-8
+                  px-6
                   py-4
                   rounded-[18px]
                   font-black
-                  text-lg
+                  text-base
+                  md:text-lg
                   shadow-xl
+                  text-center
                 "
               >
                 Nova Proposta
@@ -126,11 +146,13 @@ export default function Dashboard() {
                   hover:bg-white/20
                   transition-all
                   text-white
-                  px-8
+                  px-6
                   py-4
                   rounded-[18px]
                   font-black
-                  text-lg
+                  text-base
+                  md:text-lg
+                  text-center
                 "
               >
                 Visualizar
@@ -144,7 +166,15 @@ export default function Dashboard() {
 
         {/* CARDS */}
 
-        <div className="grid grid-cols-4 gap-5">
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            xl:grid-cols-4
+            gap-5
+          "
+        >
 
           {/* CARD 1 */}
 
@@ -154,13 +184,13 @@ export default function Dashboard() {
               bg-[#FFC837]
               rounded-[28px]
               shadow-xl
-              p-7
+              p-6
               relative
               overflow-hidden
               hover:-translate-y-1
               hover:scale-[1.01]
               transition-all
-              min-h-[220px]
+              min-h-[200px]
               flex
               flex-col
               justify-between
@@ -172,8 +202,8 @@ export default function Dashboard() {
                 absolute
                 bottom-[-40px]
                 right-[-40px]
-                w-[130px]
-                h-[130px]
+                w-[120px]
+                h-[120px]
                 rounded-full
                 bg-white/20
               "
@@ -193,7 +223,8 @@ export default function Dashboard() {
 
               <h2
                 className="
-                  text-4xl
+                  text-3xl
+                  md:text-4xl
                   font-black
                   text-[#832472]
                   mt-4
@@ -212,7 +243,8 @@ export default function Dashboard() {
                 relative
                 z-10
                 text-[#832472]
-                text-base
+                text-sm
+                md:text-base
                 leading-relaxed
                 font-medium
               "
@@ -233,11 +265,11 @@ export default function Dashboard() {
               shadow-xl
               border
               border-gray-100
-              p-7
+              p-6
               hover:-translate-y-1
               hover:scale-[1.01]
               transition-all
-              min-h-[220px]
+              min-h-[200px]
               flex
               flex-col
               justify-between
@@ -252,7 +284,8 @@ export default function Dashboard() {
 
               <h2
                 className="
-                  text-4xl
+                  text-3xl
+                  md:text-4xl
                   font-black
                   text-[#832472]
                   mt-4
@@ -267,7 +300,8 @@ export default function Dashboard() {
             <p
               className="
                 text-gray-500
-                text-base
+                text-sm
+                md:text-base
                 leading-relaxed
               "
             >
@@ -286,8 +320,8 @@ export default function Dashboard() {
               shadow-xl
               border
               border-gray-100
-              p-7
-              min-h-[220px]
+              p-6
+              min-h-[200px]
               flex
               flex-col
               justify-between
@@ -302,7 +336,8 @@ export default function Dashboard() {
 
               <h2
                 className="
-                  text-6xl
+                  text-5xl
+                  md:text-6xl
                   font-black
                   text-[#16968D]
                   mt-3
@@ -316,7 +351,8 @@ export default function Dashboard() {
             <p
               className="
                 text-gray-500
-                text-base
+                text-sm
+                md:text-base
                 leading-relaxed
               "
             >
@@ -333,11 +369,11 @@ export default function Dashboard() {
               bg-[#16968D]
               rounded-[28px]
               shadow-xl
-              p-7
+              p-6
               text-white
               relative
               overflow-hidden
-              min-h-[220px]
+              min-h-[200px]
               flex
               flex-col
               justify-between
@@ -364,7 +400,8 @@ export default function Dashboard() {
 
               <h2
                 className="
-                  text-4xl
+                  text-3xl
+                  md:text-4xl
                   font-black
                   mt-4
                   leading-tight
@@ -382,7 +419,8 @@ export default function Dashboard() {
                 relative
                 z-10
                 text-white/90
-                text-base
+                text-sm
+                md:text-base
                 leading-relaxed
               "
             >
