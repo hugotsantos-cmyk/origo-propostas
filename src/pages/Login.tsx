@@ -5,15 +5,48 @@ export default function Login() {
 
   const [usuario, setUsuario] = useState('')
   const [senha, setSenha] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate()
 
-  function handleLogin(e: React.FormEvent) {
+  async function handleLogin(
+    e: React.FormEvent
+  ) {
 
     e.preventDefault()
 
-    if (usuario && senha) {
+    if (!usuario || !senha) {
+      return
+    }
+
+    try {
+
+      setLoading(true)
+
+      /* SIMULA LOGIN */
+
+      await new Promise(resolve =>
+        setTimeout(resolve, 600)
+      )
+
+      /* SALVA LOGIN */
+
+      localStorage.setItem('logado', 'true')
+
+      /* REDIRECIONA */
+
       navigate('/dashboard')
+
+    } catch (error) {
+
+      console.error(error)
+
+      alert('Erro ao entrar.')
+
+    } finally {
+
+      setLoading(false)
+
     }
 
   }
@@ -29,16 +62,17 @@ export default function Login() {
         bg-gradient-to-br
         from-[#832472]
         to-[#5A189A]
-        p-6
+        p-4
       "
     >
 
       <div
         className="
           bg-white
-          rounded-[36px]
+          rounded-[28px]
           shadow-2xl
-          p-12
+          p-8
+          md:p-12
           w-full
           max-w-md
           relative
@@ -46,15 +80,15 @@ export default function Login() {
         "
       >
 
-        {/* ELEMENTO DECORATIVO */}
+        {/* ELEMENTO */}
 
         <div
           className="
             absolute
             top-[-70px]
             right-[-70px]
-            w-[180px]
-            h-[180px]
+            w-[140px]
+            h-[140px]
             rounded-full
             bg-[#FFC837]
             opacity-20
@@ -63,11 +97,13 @@ export default function Login() {
 
         <div className="relative z-10">
 
+          {/* HEADER */}
+
           <p
             className="
               uppercase
-              tracking-[5px]
-              text-xs
+              tracking-[4px]
+              text-[10px]
               text-[#832472]
               font-semibold
             "
@@ -77,7 +113,8 @@ export default function Login() {
 
           <h1
             className="
-              text-5xl
+              text-4xl
+              md:text-5xl
               font-black
               text-[#282828]
               mt-4
@@ -92,7 +129,8 @@ export default function Login() {
           <p
             className="
               text-gray-500
-              text-lg
+              text-base
+              md:text-lg
               mt-5
               leading-relaxed
             "
@@ -104,7 +142,7 @@ export default function Login() {
 
           <form
             onSubmit={handleLogin}
-            className="mt-10 space-y-5"
+            className="mt-8 space-y-5"
           >
 
             {/* USUÁRIO */}
@@ -125,11 +163,13 @@ export default function Login() {
                 type="text"
                 placeholder="Digite seu usuário"
                 value={usuario}
-                onChange={(e) => setUsuario(e.target.value)}
+                onChange={(e) =>
+                  setUsuario(e.target.value)
+                }
                 className="
                   w-full
                   mt-2
-                  px-5
+                  px-4
                   py-4
                   rounded-[18px]
                   border
@@ -137,7 +177,7 @@ export default function Login() {
                   focus:outline-none
                   focus:ring-2
                   focus:ring-[#832472]
-                  text-lg
+                  text-base
                 "
               />
 
@@ -161,11 +201,13 @@ export default function Login() {
                 type="password"
                 placeholder="Digite sua senha"
                 value={senha}
-                onChange={(e) => setSenha(e.target.value)}
+                onChange={(e) =>
+                  setSenha(e.target.value)
+                }
                 className="
                   w-full
                   mt-2
-                  px-5
+                  px-4
                   py-4
                   rounded-[18px]
                   border
@@ -173,36 +215,42 @@ export default function Login() {
                   focus:outline-none
                   focus:ring-2
                   focus:ring-[#832472]
-                  text-lg
+                  text-base
                 "
               />
 
             </div>
 
-            {/* BOTÃO ENTRAR */}
+            {/* BOTÃO */}
 
             <button
               type="submit"
+              disabled={loading}
               className="
                 w-full
                 bg-[#832472]
                 hover:opacity-90
+                disabled:opacity-70
                 transition-all
                 text-white
-                py-5
+                py-4
                 rounded-[20px]
                 font-black
-                text-xl
-                shadow-xl
+                text-lg
+                shadow-lg
                 mt-4
               "
             >
-              Entrar
+
+              {loading
+                ? 'Entrando...'
+                : 'Entrar'}
+
             </button>
 
           </form>
 
-          {/* BOTÃO DOAÇÃO */}
+          {/* DOAÇÃO */}
 
           <div className="mt-5 flex justify-center">
 
