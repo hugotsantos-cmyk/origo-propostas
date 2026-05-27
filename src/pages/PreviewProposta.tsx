@@ -6,6 +6,13 @@ export default function PreviewProposta() {
 
   const dados = JSON.parse(localStorage.getItem('proposta') || '{}')
 
+  const formatarMoeda = (valor: number) => {
+    return valor?.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
+  }
+
   const gerarPDF = () => {
 
     const elemento = document.getElementById('proposta')
@@ -36,7 +43,7 @@ export default function PreviewProposta() {
       },
 
       pagebreak: {
-        mode: ['css']
+        mode: ['legacy']
       }
     }
 
@@ -94,7 +101,7 @@ export default function PreviewProposta() {
           }
 
           .pdf-page-break {
-            page-break-after: always;
+            break-after: page;
           }
         `}
       </style>
@@ -493,7 +500,7 @@ export default function PreviewProposta() {
                   </p>
 
                   <h3 className="text-3xl font-extrabold text-[#282828] mt-2">
-                    R$ {dados.economiaMensal?.toFixed(0)}
+                    {formatarMoeda(dados.economiaMensal)}
                   </h3>
 
                 </div>
@@ -505,7 +512,7 @@ export default function PreviewProposta() {
                   </p>
 
                   <h3 className="text-3xl font-extrabold text-[#832472] mt-2">
-                    R$ {dados.economiaAnual?.toFixed(0)}
+                    {formatarMoeda(dados.economiaAnual)}
                   </h3>
 
                 </div>
@@ -529,7 +536,7 @@ export default function PreviewProposta() {
                       </span>
 
                       <strong className="text-[#16968D]">
-                        R$ {dados.contaComDesconto?.toFixed(0)}
+                        {formatarMoeda(dados.contaComDesconto)}
                       </strong>
 
                     </div>
@@ -541,7 +548,7 @@ export default function PreviewProposta() {
                       </span>
 
                       <strong className="text-[#832472]">
-                        R$ {dados.economiaMensal?.toFixed(0)}
+                        {formatarMoeda(dados.economiaMensal)}
                       </strong>
 
                     </div>
@@ -553,7 +560,7 @@ export default function PreviewProposta() {
                       </span>
 
                       <strong className="text-[#832472]">
-                        R$ {dados.economiaAnual?.toFixed(0)}
+                        {formatarMoeda(dados.economiaAnual)}
                       </strong>
 
                     </div>
