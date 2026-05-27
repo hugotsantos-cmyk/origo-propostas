@@ -24,7 +24,8 @@ export default function PreviewProposta() {
         scale: 2,
         useCORS: true,
         letterRendering: true,
-        allowTaint: true
+        allowTaint: true,
+        backgroundColor: '#ffffff'
       },
 
       jsPDF: {
@@ -35,7 +36,7 @@ export default function PreviewProposta() {
       },
 
       pagebreak: {
-        mode: ['css', 'legacy', 'avoid-all']
+        mode: ['css']
       }
     }
 
@@ -83,14 +84,18 @@ export default function PreviewProposta() {
 
       <style>
         {`
-          .page-break-after {
+          .pdf-page {
+            width: 297mm;
+            height: 210mm;
+            background: white;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
             page-break-after: always;
-            break-after: page;
           }
 
-          .page-break-before {
-            page-break-before: always;
-            break-before: page;
+          .pdf-page:last-child {
+            page-break-after: auto;
           }
         `}
       </style>
@@ -125,17 +130,7 @@ export default function PreviewProposta() {
           {/* PÁGINA 1 */}
           {/* ======================= */}
 
-          <section
-            className="
-              w-[297mm]
-              h-[210mm]
-              bg-white
-              overflow-hidden
-              relative
-              mx-auto
-              page-break-after
-            "
-          >
+          <div className="pdf-page">
 
             <div
               className="
@@ -430,23 +425,13 @@ export default function PreviewProposta() {
 
             </div>
 
-          </section>
+          </div>
 
           {/* ======================= */}
           {/* PÁGINA 2 */}
           {/* ======================= */}
 
-          <section
-            className="
-              w-[297mm]
-              h-[210mm]
-              bg-white
-              overflow-hidden
-              relative
-              mx-auto
-              page-break-before
-            "
-          >
+          <div className="pdf-page">
 
             <div className="bg-gradient-to-r from-[#832472] to-[#5A189A] p-7 text-white">
 
@@ -654,7 +639,7 @@ export default function PreviewProposta() {
 
             </div>
 
-          </section>
+          </div>
 
         </div>
 
