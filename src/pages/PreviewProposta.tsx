@@ -91,11 +91,10 @@ export default function PreviewProposta() {
             overflow: hidden;
             position: relative;
             margin: 0 auto;
-            page-break-after: always;
           }
 
-          .pdf-page:last-child {
-            page-break-after: auto;
+          .pdf-page-break {
+            page-break-after: always;
           }
         `}
       </style>
@@ -130,7 +129,7 @@ export default function PreviewProposta() {
           {/* PÁGINA 1 */}
           {/* ======================= */}
 
-          <div className="pdf-page">
+          <div className="pdf-page pdf-page-break">
 
             <div
               className="
@@ -152,7 +151,7 @@ export default function PreviewProposta() {
                 gap-8
                 px-10
                 pt-4
-                pb-8
+                pb-6
                 h-full
               "
             >
@@ -169,7 +168,7 @@ export default function PreviewProposta() {
                       src={logo}
                       alt="Órigo Energia"
                       className="
-                        w-16
+                        w-14
                         object-contain
                         opacity-90
                       "
@@ -433,7 +432,7 @@ export default function PreviewProposta() {
 
           <div className="pdf-page">
 
-            <div className="bg-gradient-to-r from-[#832472] to-[#5A189A] p-7 text-white">
+            <div className="bg-gradient-to-r from-[#832472] to-[#5A189A] p-5 text-white">
 
               <p className="uppercase tracking-[5px] text-xs text-purple-200">
                 SIMULAÇÃO FINANCEIRA
@@ -451,7 +450,7 @@ export default function PreviewProposta() {
 
             </div>
 
-            <div className="p-5">
+            <div className="px-5 py-4">
 
               <div className="grid grid-cols-4 gap-4">
 
